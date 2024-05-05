@@ -1,0 +1,64 @@
+.header {
+  top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border: 3px solid var(--Header-outline);
+  border-radius: 1rem;
+  color: white;
+  max-width: 40rem;
+  min-width: 10rem;
+  margin: 2rem auto;
+}
+
+.heading {
+  width: min-content;
+  color: white;
+}
+
+.heading h1 {
+  font-size: 2.5rem;
+  line-height: 2rem;
+  margin: 0;
+}
+
+.score {
+  background-color: white;
+  padding: 1rem 3rem;
+  text-align: center;
+  border-radius: 0.6rem;
+}
+
+.score span {
+  font-size: 1rem;
+  letter-spacing: 0.125rem;
+  font-weight: 700;
+  color: var(--Score-text);
+}
+
+.score h2 {
+  font-size: 4rem;
+  line-height: 4rem;
+  margin: 0;
+  color: var(--Dark-text);
+}
+@media (max-width: 768px) {
+  .header {
+    width: 90%;
+    margin: 1rem auto;
+    padding: 0.8rem 1.5rem;
+  }
+  .heading h1 {
+    font-size: 1.5rem;
+    line-height: 1.3rem;
+    font-weight: 500;
+  }
+  .score {
+    padding: 0.8rem 2rem;
+  }
+  .score h2 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}

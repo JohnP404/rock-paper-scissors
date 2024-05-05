@@ -1,0 +1,87 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  background-color: hsla(237, 49%, 15%, 0.6);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: showOverlay 150ms linear forwards;
+}
+
+@keyframes showOverlay {
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: grid;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  opacity: 0;
+  animation: showModal 150ms linear forwards;
+  grid-template-areas:
+    "title close"
+    "svg svg";
+}
+
+@keyframes showModal {
+  to {
+    opacity: 1;
+  }
+}
+
+.modal h1 {
+  color: var(--Dark-text);
+  margin-bottom: 2rem;
+  grid-area: title;
+  line-height: 0.5;
+}
+
+.modal img {
+  cursor: pointer;
+  grid-area: close;
+  justify-self: end;
+  align-self: center;
+}
+
+.modal svg {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  grid-area: svg;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    border-radius: 0;
+    align-content: space-around;
+    justify-content: center;
+    min-height: 100svh;
+    min-width: 100vw;
+    text-align: center;
+    transform: translate(0);
+    left: 0;
+    top: 0;
+    padding: 0;
+    grid-template-areas:
+      "title title"
+      "svg svg"
+      "close close";
+  }
+  .modal h1 {
+    color: var(--Dark-text);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .modal img {
+    margin: 2rem 0;
+    justify-self: center;
+  }
+}
